@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 20:01:21 by amtan             #+#    #+#             */
-/*   Updated: 2025/07/24 20:07:05 by amtan            ###   ########.fr       */
+/*   Updated: 2025/07/24 22:11:29 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	ft_print_numbers(void)
 {
-	int	starting_number;
-	int	ending_number;
-	int	current_number;
+	char	starting_number;
+	char	ending_number;
+	char	current_number;
 
 	starting_number = '0';
 	ending_number = '9';
 	current_number = starting_number;
 	while (current_number <= ending_number)
 	{
-		write(1, &current_number, 4);
+		write(1, &current_number, 1);
 		current_number++;
 	}
 }

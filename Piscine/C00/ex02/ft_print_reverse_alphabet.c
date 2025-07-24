@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 19:51:43 by amtan             #+#    #+#             */
-/*   Updated: 2025/07/24 19:59:24 by amtan            ###   ########.fr       */
+/*   Updated: 2025/07/24 22:10:15 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_print_reverse_alphabet(void)
 {
-	int	starting_letter;
-	int	ending_letter;
-	int	current_letter;
+	char	starting_letter;
+	char	ending_letter;
+	char	current_letter;
 
 	starting_letter = 'z';
 	ending_letter = 'a';
