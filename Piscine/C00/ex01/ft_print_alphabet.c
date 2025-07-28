@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 19:18:57 by amtan             #+#    #+#             */
-/*   Updated: 2025/07/24 22:08:54 by amtan            ###   ########.fr       */
+/*   Updated: 2025/07/28 11:26:58 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,10 @@ void	ft_print_alphabet(void)
 		current_letter++;
 	}
 }
+
+/*
+int	main(void)
+{
+	ft_print_alphabet();
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 20:31:41 by amtan             #+#    #+#             */
-/*   Updated: 2025/07/24 22:13:31 by amtan            ###   ########.fr       */
+/*   Updated: 2025/07/28 11:30:14 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,10 @@ void	ft_print_comb(void)
 		first_number++;
 	}
 }
+
+/*
+int	main(void)
+{
+	ft_print_comb();
+}
+*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: amtan <amtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 17:18:45 by amtan             #+#    #+#             */
-/*   Updated: 2025/07/27 18:21:27 by amtan            ###   ########.fr       */
+/*   Updated: 2025/07/28 11:31:00 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ void	ft_print_comb2(void)
 	}
 }
 
+/*
 int	main(void)
 {
 	ft_print_comb2();
 }
+*/
