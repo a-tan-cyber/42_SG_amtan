@@ -6,30 +6,85 @@
 /*   By: hteo <hteo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 23:38:45 by amtan             #+#    #+#             */
-/*   Updated: 2025/07/29 22:33:36 by hteo             ###   ########.fr       */
+/*   Updated: 2025/07/29 23:14:48 by hteo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-static char	*g_top_row;
-static char	*g_mid_row;
-static char	*g_btm_row;
+static char	g_top_row[3];
+static char	g_mid_row[3];
+static char	g_btm_row[3];
 
 void	ft_putchar(char c);
 
-void	rush00(void)
+void	rush00_01(int rush_num)
 {
-	g_top_row[] = {'o', '-'. 'o'};
-	g_mid_row[] = {'|', ' '. '|'};
-	g_btm_row[] = {'o', '-'. 'o'};
+	if (rush_num == 0)
+	{
+		g_top_row[0] = 'o';
+		g_top_row[1] = '-';
+		g_top_row[2] = 'o';
+		g_mid_row[0] = '|';
+		g_mid_row[1] = ' ';
+		g_mid_row[2] = '|';
+		g_btm_row[0] = 'o';
+		g_btm_row[1] = '-';
+		g_btm_row[2] = 'o';
+	}
+	else
+	{
+		g_top_row[0] = '/';
+		g_top_row[1] = '*';
+		g_top_row[2] = '\\';
+		g_mid_row[0] = '*';
+		g_mid_row[1] = ' ';
+		g_mid_row[2] = '*';
+		g_btm_row[0] = '\\';
+		g_btm_row[1] = '*';
+		g_btm_row[2] = '/';
+	}
 }
 
-void	rush01(void)
+void	rush02_03(int rush_num)
 {
-	g_top_row[] = {'/', '*'. '\\'};
-	g_mid_row[] = {'*', ' '. '*'};
-	g_btm_row[] = {'\\', '*'. '/'};
+	if (rush_num == 2)
+	{
+		g_top_row[0] = 'A';
+		g_top_row[1] = 'B';
+		g_top_row[2] = 'A';
+		g_mid_row[0] = 'B';
+		g_mid_row[1] = ' ';
+		g_mid_row[2] = 'B';
+		g_btm_row[0] = 'C';
+		g_btm_row[1] = 'B';
+		g_btm_row[2] = 'C';
+	}
+	else
+	{
+		g_top_row[0] = 'A';
+		g_top_row[1] = 'B';
+		g_top_row[2] = 'C';
+		g_mid_row[0] = 'B';
+		g_mid_row[1] = ' ';
+		g_mid_row[2] = 'B';
+		g_btm_row[0] = 'A';
+		g_btm_row[1] = 'B';
+		g_btm_row[2] = 'C';
+	}
+}
+
+void	rush04(void)
+{
+	g_top_row[0] = 'A';
+	g_top_row[1] = 'B';
+	g_top_row[2] = 'C';
+	g_mid_row[0] = 'B';
+	g_mid_row[1] = ' ';
+	g_mid_row[2] = 'B';
+	g_btm_row[0] = 'C';
+	g_btm_row[1] = 'B';
+	g_btm_row[2] = 'A';
 }
 
 void	print_row(int last_col, char first_char, char mid_char, char last_char)
@@ -50,26 +105,18 @@ void	print_row(int last_col, char first_char, char mid_char, char last_char)
 	ft_putchar('\n');
 }
 
-int	is_zero_or_negative(int x, int y)
-{
-	if (x <= 0 || y <= 0)
-	{
-		write(2, "Error: Both x and y must be ", 28);
-		write(2, "non-zero positive integers.\n", 28);
-		return (1);
-	}
-	else
-		return (0);
-}
-
 void	rush(int x, int y)
 {
 	int	current_row;
 	int	last_col;
 	int	last_row;
 
-	if (is_zero_or_negative(x, y) == 1)
+	if (x <= 0 || y <= 0)
+	{
+		write(2, "Error: Both x and y must be ", 28);
+		write(2, "non-zero positive integers.\n", 28);
 		return ;
+	}
 	current_row = 1;
 	last_col = x;
 	last_row = y;
