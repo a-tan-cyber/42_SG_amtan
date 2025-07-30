@@ -1,0 +1,10 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Show Workspace Path",
+      "type": "shell",
+      "command": "echo workspaceFolder = ${workspaceFolder}"
+    }
+  ]
+}
