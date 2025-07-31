@@ -6,33 +6,34 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 17:25:44 by amtan             #+#    #+#             */
-/*   Updated: 2025/07/30 22:01:36 by amtan            ###   ########.fr       */
+/*   Updated: 2025/07/31 15:28:42 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <unistd.h>
+// #include <stdio.h>
 
 // void	ft_sort_int_tab(int *tab, int size);
 
 // int	main(void)
 // {
-// 	static int	tab[5] = {5, 3, 8, 1, 2};
-// 	int			size;
-// 	int			i;
-// 	char		c;
+// 	int	tab[] = {5, 3, 8, 1, 2};
+// 	int	size;
+// 	int	i;
 
-// 	size = 5;
-// 	i = 0;
-// 	ft_sort_int_tab(tab, size);
-// 	while (i < size)
+// 	size = sizeof(tab) / sizeof(tab[0]);
+// 	printf("Original array: ");
+// 	for (i = 0; i < size; i++)
 // 	{
-// 		if (i > 0)
-// 			write(1, ", ", 2);
-// 		c = tab[i] + '0';
-// 		write(1, &c, 1);
-// 		i++;
+// 		printf("%d ", tab[i]);
 // 	}
-// 	write(1, "\n", 1);
+// 	printf("\n");
+// 	ft_sort_int_tab(tab, size);
+// 	printf("Sorted array: ");
+// 	for (i = 0; i < size; i++)
+// 	{
+// 		printf("%d ", tab[i]);
+// 	}
+// 	printf("\n");
 // 	return (0);
 // }
 

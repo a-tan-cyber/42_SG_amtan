@@ -6,9 +6,18 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 16:47:25 by amtan             #+#    #+#             */
-/*   Updated: 2025/07/30 16:50:23 by amtan            ###   ########.fr       */
+/*   Updated: 2025/07/31 15:31:28 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	int	nbr;
+
+// 	ft_ft(&nbr);
+// 	printf("%d\n", nbr);
+// }
 
 void	ft_ft(int *nbr)
 {
