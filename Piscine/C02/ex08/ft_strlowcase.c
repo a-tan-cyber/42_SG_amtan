@@ -1,44 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/30 22:55:35 by amtan             #+#    #+#             */
-/*   Updated: 2025/07/31 22:36:12 by amtan            ###   ########.fr       */
+/*   Created: 2025/07/31 23:07:28 by amtan             #+#    #+#             */
+/*   Updated: 2025/07/31 23:08:35 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
 
-// char	*ft_strncpy(char *dest, char *src, unsigned int n);
+// char	*ft_strlowcase(char *str);
 
 // int	main(void)
 // {
-// 	static char	src[] = "Hello, World!";
-// 	char		dest[50];
+// 	static char	str[] = "HELLO, WORLD!";
 
-// 	ft_strncpy(dest, src, 14);
-// 	printf("Source: %s\n", src);
-// 	printf("Destination: %s\n", dest);
+// 	printf("Original: %s\n", str);
+// 	ft_strlowcase(str);
+// 	printf("Lowercase: %s\n", str);
 // 	return (0);
 // }
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strlowcase(char *str)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	while (i < n && src[i] != '\0')
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
+		if (str[i] >= 'A' && str[i] <= 'Z')
+		{
+			str[i] += ' ';
+		}
 		i++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	return (str);
 }

@@ -1,44 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/30 22:55:35 by amtan             #+#    #+#             */
-/*   Updated: 2025/07/31 22:36:12 by amtan            ###   ########.fr       */
+/*   Created: 2025/07/31 22:38:36 by amtan             #+#    #+#             */
+/*   Updated: 2025/07/31 22:45:15 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
 
-// char	*ft_strncpy(char *dest, char *src, unsigned int n);
+// int	ft_str_is_alpha(char *str);
 
 // int	main(void)
 // {
-// 	static char	src[] = "Hello, World!";
-// 	char		dest[50];
+// 	static char	str[] = "HelloWorld";
+// 	int			result;
 
-// 	ft_strncpy(dest, src, 14);
-// 	printf("Source: %s\n", src);
-// 	printf("Destination: %s\n", dest);
-// 	return (0);
+// 	result = ft_str_is_alpha(str);
+// 	if (result)
+// 		printf("The string \"%s\" is alphabetic.\n", str);
+// 	else
+// 		printf("The string \"%s\" is not alphabetic.\n", str);
 // }
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_str_is_alpha(char *str)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	while (i < n && src[i] != '\0')
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
+		if ((str[i] < 'A' || str[i] > 'Z') && (str[i] < 'a' || str[i] > 'z'))
+			return (0);
 		i++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	return (1);
 }
