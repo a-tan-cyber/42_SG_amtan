@@ -1,16 +1,51 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: your_login <your_login@student.42.fr>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/01 13:00:00 by your_login        #+#    #+#             */
-/*   Updated: 2025/08/01 13:00:00 by your_login       ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include <stdlib.h>
+
+#include <stdio.h>
+
+static int	is_sep(char c); 
+static int	count_words(char *s);
+static char	*malloc_word(char *start);
+static char	**cleanup(char **res, int filled);
+char    **ft_split(char *str);
+
+int     main(void)
+{
+    char *tests[] = {
+        "Hello world this is a test",
+        "",
+        "   ",
+        "one",
+        "  leading and trailing  ",
+        "multi\tsep\nlines"
+    };
+    int  num_tests = sizeof(tests) / sizeof(tests[0]);
+    int  t;
+
+    for (t = 0; t < num_tests; t++)
+    {
+        char **res;
+        int    i;
+
+        printf("Test #%d: \"%s\"\n", t + 1, tests[t]);
+        res = ft_split(tests[t]);
+        if (!res)
+        {
+            printf("  -> ft_split returned NULL\n\n");
+            continue;
+        }
+        i = 0;
+        while (res[i])
+        {
+            printf("  [%d]: \"%s\"\n", i, res[i]);
+            free(res[i]);
+            i++;
+        }
+        free(res);
+        printf("\n");
+    }
+    return (0);
+}
 
 static int	is_sep(char c)
 {
