@@ -1,0 +1,46 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/05 19:48:19 by amtan             #+#    #+#             */
+/*   Updated: 2025/08/05 19:58:15 by amtan            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+// #include <string.h>
+
+// char	*ft_strcat(char *dest, char *src);
+
+// int	main(void)
+// {
+// 	static char	dest1[50] = "Hello, ";
+// 	static char	src1[] = "World!";
+// 	static char	dest2[50] = "Hello, ";
+// 	static char	src2[] = "World!";
+
+// 	printf("ft_strcat --> %s\n", ft_strcat(dest1, src1));
+// 	printf("strcat    --> %s\n", strcat(dest2, src2));
+// 	return (0);
+// }
+
+char	*ft_strcat(char *dest, char *src)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (dest[i] != '\0')
+		i++;
+	j = 0;
+	while (src[j] != '\0')
+	{
+		dest[i + j] = src[j];
+		j++;
+	}
+	dest[i + j] = '\0';
+	return (dest);
+}
