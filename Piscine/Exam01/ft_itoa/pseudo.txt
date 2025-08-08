@@ -1,0 +1,22 @@
+Assignment name  : ft_itoa
+Expected files   : ft_itoa.c
+Allowed functions: malloc
+--------------------------------------------------------------------------------
+
+Write a function that takes an int and converts it to a null-terminated string.
+The function returns the result in a char array that you must allocate.
+
+Your function must be declared as follows:
+
+char	*ft_itoa(int nbr);
+
+---
+Step 0: Convert to long
+Step 1: Handle case 0
+Step 2: Check negative
+Step 3: Get no. digits
+Step 4: Allocate mem
+Step 5: Terminate w \0
+Step 6: Fill in reverse
+Step 7: Place - if neg
+Step 8: Return result

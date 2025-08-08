@@ -1,0 +1,39 @@
+Assignment name  : ft_split
+Expected files   : ft_split.c
+Allowed functions: malloc
+--------------------------------------------------------------------------------
+
+Write a function that takes a string, splits it into words, and returns them as
+a NULL-terminated array of strings.
+
+A "word" is defined as a part of a string delimited either by spaces/tabs/new
+lines, or by the start/end of the string.
+
+Your function must be declared as follows:
+
+char    **ft_split(char *str);
+
+---
+Step 0: Guard against NULL input
+Step 1: Count no. words (condition: str[i] != '\0')
+    Step 1a: Detect if char is separator
+    Step 1b: Skip leading separators
+        (str[i] && is_sep(str[i]))
+    Step 1c: Found a word -> increment word Count
+    Step 1d: Skip till end of word
+        (str[i] && !is_sep(str[i]))
+    Step 1e: Repeat the loop to detect each word in string
+    Step 1f: Return word_count
+Step 2: Allocate memory for the result array of strings
+    Step 2a: result = (malloc((words + 1) * sizeof(char *)))
+    Step 2b: Check if malloc successful (if (!result) return NULL)
+Step 3: Input words into result array
+    Step 3a: Malloc for each word (rmb to +1 for null char)
+        static char	*malloc_word(char *start)
+    Step 3aa: Calc length of word
+    Step 3b: Copy from start pointer to array index and add \0
+Step 4: Loop per word (j < words)
+    (i for index of result array; j for current no. of words)
+    Step 4a: Check if malloc success, if not then free memory
+        cleanup(result, no of words processed)
+Step 5: Add null terminator for result array and return result
