@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 12:47:17 by amtan             #+#    #+#             */
-/*   Updated: 2025/08/13 14:24:40 by amtan            ###   ########.fr       */
+/*   Updated: 2025/08/13 14:36:31 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,14 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		result[0] = '\0';
 		return (result);
 	}
+	if (!strs || !sep)
+	{
+		result = (char *)malloc(1);
+		if (!result)
+			return (NULL);
+		result[0] = '\0';
+		return (result);
+	}
 	total = ft_total_len(size, strs, sep);
 	result = (char *)malloc(sizeof(char) * (total + 1));
 	if (!result)
@@ -92,3 +100,15 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	ft_fill(result, size, strs, sep);
 	return (result);
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	static char	*test[] = {"Hello", "Piscine", "C07"};
+// 	char		*s;
+
+// 	s = ft_strjoin(3, test, " ");
+// 	printf("'%s'\n", s);
+// 	free(s);
+// }
