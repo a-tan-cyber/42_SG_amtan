@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:46:25 by amtan             #+#    #+#             */
-/*   Updated: 2025/08/13 14:19:07 by amtan            ###   ########.fr       */
+/*   Updated: 2025/08/13 19:44:00 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ char	*itoa_base_long(long n, char *base_to)
 	char			buf[66];
 	int				is_neg;
 
+	bl = base_len(base_to);
 	if (bl == -1)
 		return (0);
 	is_neg = 0;
