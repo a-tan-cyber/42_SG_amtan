@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 12:47:17 by amtan             #+#    #+#             */
-/*   Updated: 2025/08/13 14:19:37 by amtan            ###   ########.fr       */
+/*   Updated: 2025/08/13 14:24:40 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,15 +92,3 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	ft_fill(result, size, strs, sep);
 	return (result);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	static char	*test[] = {"test1", "test2", "test3"};
-// 	char		*s;
-
-// 	s = ft_strjoin(0 , test, " LOL ");
-// 	printf("'%s'\n", s);
-// 	free(s);
-// }
