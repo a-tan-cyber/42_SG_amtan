@@ -1,12 +1,4 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    libft_creator.sh                                   :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/08/11 18:02:20 by amtan             #+#    #+#              #
-#    Updated: 2025/08/11 18:02:21 by amtan            ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
+#!/bin/sh
+cc -Wall -Wextra -Werror -c ft_putchar.c ft_swap.c ft_putstr.c ft_strlen.c ft_strcmp.c
+ar rc libft.a ft_putchar.o ft_swap.o ft_putstr.o ft_strlen.o ft_strcmp.o
+ranlib libft.a
