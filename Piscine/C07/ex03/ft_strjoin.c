@@ -6,81 +6,101 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 12:47:17 by amtan             #+#    #+#             */
-/*   Updated: 2025/08/11 13:37:56 by amtan            ###   ########.fr       */
+/*   Updated: 2025/08/13 13:34:44 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_strlen(char *str);
+int	ft_strlen(char *str)
+{
+	int	i;
 
-char	*malloc_ft_strjoin(int size, char **strs, char *sep);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+int	ft_total_len(int size, char **strs, char *sep)
+{
+	int	i;
+	int	len;
+	int	sep_len;
+
+	i = 0;
+	len = 0;
+	sep_len = ft_strlen(sep);
+	while (i < size)
+	{
+		len += ft_strlen(strs[i]);
+		i++;
+	}
+	if (size > 0)
+		len += sep_len * (size - 1);
+	return (len);
+}
+
+int	ft_cpy(char *dst, char *src, int pos)
+{
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dst[pos] = src[i];
+		pos++;
+		i++;
+	}
+	return (pos);
+}
+
+void	ft_fill(char *dst, int size, char **strs, char *sep)
+{
+	int	i;
+	int	pos;
+
+	i = 0;
+	pos = 0;
+	while (i < size)
+	{
+		pos = ft_cpy(dst, strs[i], pos);
+		if (i < size - 1)
+			pos = ft_cpy(dst, sep, pos);
+		i++;
+	}
+	dst[pos] = '\0';
+}
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	int		i;
-	int		j;
 	char	*result;
-	int		k;
+	int		total;
 
-	i = 0;
-	j = 0;
-	k = 0;
-	result = (char *)malloc_ft_strjoin(size, strs, sep);
-	if (!result)
-		return (NULL);
-
-	while (i < size)
+	if (size <= 0)
 	{
-		k = 0;
-		if (!strs[i])
+		result = (char *)malloc(sizeof(char));
+		if (!result)
 			return (NULL);
-		while (strs[i][k])
-			result[j++] = strs[i][k++];
-		if (i < size - 1)
-		{
-			k = 0;
-			while (sep[k])
-				result[j++] = sep[k++];
-		}
-		i++;
+		result[0] = '\0';
+		return (result);
 	}
-	result[j] = '\0';
-	return (result);
-}
-
-int	ft_strlen(char *str)
-{
-	int	count;
-
-	if (!str)
-		return (0);
-	count = 0;
-	while (str[count])
-		count++;
-	return (count);
-}
-
-char	*malloc_ft_strjoin(int size, char **strs, char *sep)
-{
-	int		total_length;
-	int		i;
-	char	*result;
-
-	total_length = 0;
-	i = 0;
-	if (size > 0)
-	{
-		while (i < size)
-		{
-			total_length += ft_strlen(strs[i]);
-			i++;
-		}
-		total_length += ft_strlen(sep) * (size - 1);
-	}
-	total_length++;
-	result = (char *)malloc(sizeof(char) * total_length);
+	total = ft_total_len(size, strs, sep);
+	result = (char *)malloc(sizeof(char) * (total + 1));
 	if (!result)
 		return (NULL);
+	ft_fill(result, size, strs, sep);
 	return (result);
+}
+
+#include <stdio.h>
+
+int	main(void)
+{
+	static char	*test[] = {"test1", "test2", "test3"};
+	char		*s;
+
+	s = ft_strjoin(0 , test, " LOL ");
+	printf("'%s'\n", s);
+	free(s);
 }
