@@ -6,13 +6,13 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 21:13:40 by amtan             #+#    #+#             */
-/*   Updated: 2025/08/07 21:13:58 by amtan            ###   ########.fr       */
+/*   Updated: 2025/08/13 21:24:14 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ABS_H
 # define FT_ABS_H
 
-# define ABS(Value) ((Value) < 0 ? -(Value) : (Value))
+# define ABS(Value) ((Value) * (1 - 2 * ((Value) < 0)))
 
 #endif
