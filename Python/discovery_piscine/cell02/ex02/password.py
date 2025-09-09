@@ -2,8 +2,8 @@
 
 password = "Python is awesome"
 
-input = input()
-if input == password:
+user_input = input()
+if user_input == password:
     print("ACCESS GRANTED")
 else:
     print("ACCESS DENIED")

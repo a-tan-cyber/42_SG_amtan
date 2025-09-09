@@ -6,10 +6,11 @@ def main():
     if argc < 2:
         print("none")
         return (1)
-    print(f"parameters: {argc - 1}")
     for index in range(1, argc):
-        parameter = sys.argv[index]
-        print(f"{parameter}: {len(parameter)}")
+        arg = sys.argv[index]
+        if len(arg) > 3 and arg[-3] == 'i' and arg[-2] == "s" and arg[-1] == "m":
+            continue
+        print(arg + "ism")
 
 
 if __name__ == "__main__":

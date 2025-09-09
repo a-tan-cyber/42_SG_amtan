@@ -6,10 +6,12 @@ def main():
     if argc < 2:
         print("none")
         return (1)
-    print(f"parameters: {argc - 1}")
     for index in range(1, argc):
-        parameter = sys.argv[index]
-        print(f"{parameter}: {len(parameter)}")
+        print(downcase_it(sys.argv[index]))
+
+
+def downcase_it(string_input):
+    return (string_input.lower())
 
 
 if __name__ == "__main__":
