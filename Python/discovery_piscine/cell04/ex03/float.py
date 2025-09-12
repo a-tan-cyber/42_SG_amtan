@@ -1,17 +1,13 @@
 #!/usr/bin/env python3
 import sys
-from decimal import Decimal, InvalidOperation
 
 def main():
-    string = input("Give me a number: ").strip()
     try:
-        dec = Decimal(string)
-        if not dec.is_finite():
-            raise InvalidOperation
-    except InvalidOperation:
+        x = float(input("Give me a number: ").strip())
+    except ValueError:
         print("Error: Not a valid number.", file=sys.stderr)
         sys.exit(1)
-    if dec % 1 == 0:
+    if x.is_integer():
         print("This number is an integer.")
     else:
         print("This number is a decimal.")

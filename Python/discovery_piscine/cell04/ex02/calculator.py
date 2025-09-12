@@ -15,5 +15,6 @@ print("Thank you!")
 print(f"{first_number} + {second_number} = {first_number + second_number}")
 print(f"{first_number} - {second_number} = {first_number - second_number}")
 division_result = first_number / second_number
-print(f"{first_number} / {second_number} = {int(division_result) if division_result.is_integer() else division_result}")
+# print(f"{first_number} / {second_number} = {int(division_result) if division_result.is_integer() else division_result}")
+print(f"{first_number} / {second_number} = {division_result:.{3}f}")
 print(f"{first_number} * {second_number} = {first_number * second_number}")

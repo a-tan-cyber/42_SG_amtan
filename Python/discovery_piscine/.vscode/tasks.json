@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "echo",
+      "type": "shell",
+      "command": "echo Hello"
+    },
+    {
+      "label": "chmod+run | cat -e (ask args)",
+      "type": "shell",
+      "options": {
+        "cwd": "${fileDirname}",
+        // Use bash (needed for `cat -e`). On macOS you can switch to zsh if you prefer.
+        "shell": { "executable": "/bin/bash", "args": ["-lc"] }
+      },
+      "command": "chmod +x \"${fileBasename}\" && ./\"${fileBasename}\" ${input:runArgs} | cat -e",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "runArgs",
+      "type": "promptString",
+      "description": "Command-line arguments (leave empty for none)",
+      "default": ""
+    }
+  ]
+}
