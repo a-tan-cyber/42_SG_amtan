@@ -5,6 +5,26 @@
       "label": "Show Workspace Path",
       "type": "shell",
       "command": "echo workspaceFolder = ${workspaceFolder}"
+    },
+    {
+      "label": "build with cc (42 style)",
+      "type": "shell",
+      "command": "cc",
+      "args": [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
     }
   ]
 }
